@@ -1,0 +1,17 @@
+neo4j:
+  name: my-standalone
+  resources:
+    cpu: "0.5"
+    memory: "2Gi"
+  password: "neo4j"
+services:
+  neo4j:
+    spec:
+    type: ClusterIP
+volumes:
+  data:
+    mode: defaultStorageClass
+    defaultStorageClass:
+      requests:
+        storage: 2Gi
+# https://neo4j.com/docs/operations-manual/current/kubernetes/configuration/
