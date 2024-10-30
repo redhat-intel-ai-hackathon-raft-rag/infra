@@ -1,12 +1,11 @@
 neo4j:
-  name: my-standalone
+  name: neo4j
   resources:
     cpu: "0.5"
     memory: "2Gi"
   password: "neo4j"
 services:
   neo4j:
-    spec:
     type: ClusterIP
 volumes:
   data:
