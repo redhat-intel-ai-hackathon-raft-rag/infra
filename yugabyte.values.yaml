@@ -6,8 +6,20 @@ resource:
       memory: 0.5Gi
   tserver:
     requests:
-      cpu: 1.0
-      memory: 3.0Gi
+      cpu: 0.5
+      memory: 2.0Gi
 replicas:
   master: 2
   tserver: 3
+serviceEndpoints:
+  - name: "yb-master-ui"
+    app: "yb-master"
+    type: ClusterIP
+    ports:
+      http-ui: "7000"
+  - name: "yb-tserver-service"
+    app: "yb-tserver"
+    type: ClusterIP
+    ports:
+      tcp-yql-port: "9042"
+      tcp-ysql-port: "5433"

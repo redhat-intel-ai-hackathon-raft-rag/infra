@@ -1,5 +1,7 @@
 export POD_NAME=$(kubectl get pods --namespace yugabyte -l "app=yb-master" -o jsonpath="{.items[0].metadata.name}")
 kubectl --namespace yugabyte port-forward $POD_NAME 7000:7000 &
+export POD_NAME=$(kubectl get pods --namespace yugabyte -l "app=yb-tserver" -o jsonpath="{.items[0].metadata.name}")
+kubectl --namespace yugabyte port-forward $POD_NAME 5433:5433 &
 export POD_NAME=$(kubectl get pods --namespace neo4j -l "app=neo4j" -o jsonpath="{.items[0].metadata.name}")
 kubectl --namespace neo4j port-forward $POD_NAME 7474:7474 &
 export POD_NAME=$(kubectl get pods --namespace neo4j -l "app=neo4j" -o jsonpath="{.items[0].metadata.name}")
