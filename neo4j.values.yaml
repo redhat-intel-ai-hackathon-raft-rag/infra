@@ -6,7 +6,9 @@ neo4j:
   password: "neo4jneo4j"
 services:
   neo4j:
-    type: ClusterIP
+    enabled: false
+    spec:
+      type: ClusterIP
 config:
   server.directories.plugins: "/var/lib/neo4j/labs"
   dbms.security.procedures.unrestricted: "apoc.*"

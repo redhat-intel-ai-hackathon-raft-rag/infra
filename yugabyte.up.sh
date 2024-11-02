@@ -1,6 +1,6 @@
 kubectl create namespace yugabyte
 helm repo add yugabytedb https://charts.yugabyte.com
-helm upgrade yugabyte yugabytedb/yugabyte \
---version 2.23.0 \
+helm install yugabyte yugabytedb/yugabyte \
+--version 2024.1.3 \
 -f yugabyte.values.yaml \
 --namespace yugabyte
