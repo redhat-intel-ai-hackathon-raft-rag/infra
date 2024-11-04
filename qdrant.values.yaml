@@ -1,0 +1,27 @@
+replicaCount: 3
+resources:
+  requests:
+    cpu: 1
+    memory: 5Gi
+  limits:
+    cpu: 1
+    memory: 5Gi
+
+persistence:
+  accessModes: ["ReadWriteOnce"]
+  size: 50Gi
+  annotations: {}
+  # storageVolumeName: qdrant-storage
+  # storageClassName: local-path
+
+# If you use snapshots or the snapshot shard transfer mechanism, we recommend
+# creating a separate volume of the same size as your main volume so that your
+# cluster won't crash if the snapshot is too big.
+snapshotPersistence:
+  enabled: false
+  accessModes: ["ReadWriteOnce"]
+  size: 20Gi
+  annotations: {}
+  # snapshotsVolumeName: qdrant-snapshots
+  # You can change the storageClassName to ensure snapshots are saved to cold storage.
+  # storageClassName: local-path

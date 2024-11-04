@@ -2,7 +2,7 @@ neo4j:
   name: neo4j
   resources:
     cpu: "0.5"
-    memory: "2Gi"
+    memory: "1Gi"
   password: "neo4jneo4j"
 services:
   neo4j:
@@ -19,7 +19,7 @@ volumes:
     mode: defaultStorageClass
     defaultStorageClass:
       requests:
-        storage: 2Gi
+        storage: 50Gi
 apoc_config:
   apoc.trigger.enabled: "true"
   apoc.jdbc.neo4j.url: "jdbc:neo4j://neo4j-release.neo4j.svc.cluster.local:7687"
